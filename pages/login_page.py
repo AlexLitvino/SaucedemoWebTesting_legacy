@@ -4,8 +4,10 @@ from pages.inventory_page import InventoryPage
 from utils.config_parser import BASE_URL
 from allure_commons._allure import step
 
+
 class LoginPage(BasePage):
 
+    # Locators of Login page elements
     LOGIN_LOGO_IMAGE = (By.CLASS_NAME, "login_logo")
     USERNAME_INPUT_FIELD = (By.ID, "user-name")
     PASSWORD_INPUT_FIELD = (By.ID, "password")
@@ -18,8 +20,6 @@ class LoginPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-
-    # TODO: move locators inside properties?
 
     @property
     def login_logo_image(self):
@@ -57,7 +57,7 @@ class LoginPage(BasePage):
     def close_error_button(self):
         return self.element(LoginPage.CLOSE_ERROR_BUTTON)
 
-    def navigate(self):  # TODO: or get?
+    def navigate(self):
         with step(f"Navigate to '{BASE_URL}'."):
             self.driver.get(BASE_URL)
 

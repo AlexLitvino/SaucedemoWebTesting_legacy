@@ -17,4 +17,4 @@ PERFORMANCE_GLITCH_USER_PASSWORD = parser.get("users", "performance_glitch_user_
 NON_EXISTING_USER = parser.get("users", "non_existing_user")
 NON_EXISTING_USER_PASSWORD = parser.get("users", "non_existing_user_password")
 
-CHROME_DRIVER_PATH = parser.get("driver", "chrome_driver_path")
+BROWSER_NAME = parser.get("driver", "browser_name").lower()
